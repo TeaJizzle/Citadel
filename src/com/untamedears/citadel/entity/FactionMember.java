@@ -29,6 +29,7 @@ public class FactionMember implements Comparable {
 		return this.memberName;
 	}
 	
+    // This is the account ID for the player (in UUID.toString format)
 	public void setMemberName(String memberName){
 		this.memberName = memberName;
 	}
