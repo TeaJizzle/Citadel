@@ -236,8 +236,9 @@ public class CitadelDao extends MyDatabase {
     }
 
 	public int countPlayerGroups(String playerName) {
-    	SqlRow row = getDatabase().createSqlQuery("select count(*) as count from faction where founder = :founder")
+    	SqlRow row = getDatabase().createSqlQuery("select count(*) as count from faction where founder = :founder and discipline_flags = :flag")
     			.setParameter("founder", playerName)
+    			.setParameter("flag", 0)
     			.findUnique();
     	return row.getInteger("count"); 
 	}
